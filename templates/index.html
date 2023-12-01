@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Title</title>
+</head>
+<div class="container">
+    <h2>Assessment</h2>
+    {% if error %}
+    <p class ="error_message">{{ error }}</p>
+    {% endif %}
+    {% if result %}
+    <p class ="result_message">{{ result[0] }}({{ result[1] }})</p>
+    {% endif %}
+    <div class="authentication-form">
+          <form action="/" method="post">
+              <label for="personal_qualities" class="input__label">Rate personal qualities from 1 to 10</label>
+              <input type="text" class="authentication-form__input" id="personal_qualities" name="personal_qualities" required>
+              <label for="knowledge">Rate knowledge from 1 to 10</label>
+              <input type="text" class="authentication-form__input" id="knowledge" name="knowledge" required>
+              <label for="skills">Rate skills from 1 to 10</label>
+              <input type="text" class="authentication-form__input" id="skills" name="skills" required>
+              <label for="experience">Experience from 0 to 20</label>
+              <input type="text" class="authentication-form__input" id="experience" name="experience" required>
+            <input class="authentication-form__submit" type="submit" value="Submit">
+          </form>
+    </div>
+</div>
+</html>
